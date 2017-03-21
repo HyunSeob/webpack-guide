@@ -1,0 +1,6 @@
+/* common.css */
+@import 'text.css';
+
+body {
+  background-color: gray;
+}

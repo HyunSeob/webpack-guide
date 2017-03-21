@@ -2,23 +2,26 @@
   "name": "webpack-guide",
   "version": "1.0.0",
   "description": "Sample codes for webpack guide.",
-  "main": "main.js",
+  "main": "bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
-  "author": "HyunSeob <sytte1017@gmail.com> (http://hyunseob.github.io)",
+  "author": "HyunSeob <sytte1017@gmail.com> (https://hyunseob.github.io)",
   "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.0",
+    "babel-preset-env": "^1.2.1",
+    "css-loader": "^0.27.1",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-loader": "^1.6.3",
+    "eslint-plugin-import": "^2.2.0",
+    "style-loader": "^0.13.2",
+    "webpack": "^2.2.1"
+  },
   "dependencies": {
-    "babel-core": "^6.7.4",
-    "babel-eslint": "^6.0.2",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.6.0",
-    "css-loader": "^0.23.1",
-    "eslint": "^2.6.0",
-    "eslint-loader": "^1.3.0",
-    "node-sass": "^3.4.2",
-    "sass-loader": "^3.2.0",
-    "style-loader": "^0.13.1",
-    "underscore": "^1.8.3"
+    "lodash": "^4.17.4"
   }
 }

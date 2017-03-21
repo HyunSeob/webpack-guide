@@ -1,10 +1,8 @@
 // entry.js
-import './style.sass';
-
+import random from 'lodash/random';
+import './common.css';
 import hello from './hello';
 import world from './world';
 
-import _ from 'underscore';
-
-document.write(`${hello}, ${world}! `);
-document.write(`Random: ${_.random(0, 100)}`);
+document.write(`${hello}, ${world}!`);
+document.write(`Random: ${random(0, 100)}`);

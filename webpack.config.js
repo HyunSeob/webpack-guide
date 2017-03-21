@@ -1,28 +1,38 @@
 // webpack.config.js
 module.exports = {
-  entry: './entry.js',
+  entry: {
+    'entry': './entry.js'
+  },
   output: {
-    path: __dirname,
     filename: 'bundle.js'
   },
   module: {
-    preLoaders: [
+    rules: [
+      {
+         test: /\.css$/,
+         use: [
+           'style-loader',
+           'css-loader'
+         ]
+      },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+      },
       {
         test: /\.js$/,
-        loader: 'eslint',
-        exclude: /(node_modules|bower_components)/
-      }
-    ],
-    loaders: [
-      {
-        test: /\.sass$/,
-        loader: 'style!css!sass'
-      }, {
-        test: /\.js$/,
-        loader: 'babel',
-        exclude: /(node_modules|bower_components)/,
-        query: {
-          presets: ['es2015']
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: [[
+            'env', {
+              targets: {
+                browsers: ['last 2 versions']
+              }
+            }
+          ]]
         }
       }
     ]
